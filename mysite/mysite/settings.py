@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'motion.apps.MotionConfig',
+    'nutri.apps.NutriConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

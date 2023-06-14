@@ -12,33 +12,6 @@ class User(models.Model):
     weight_in_lbs = models.IntegerField(default=-1)
 
 
-class Ingredient(models.Model):
-    id = models.AutoField(primary_key=True)
-    ingredient_name = models.CharField(max_length=30)
-    date_gathered = models.DateField()
-    source_link = models.CharField()
-    # macros_list = 
-    recipe_count = models.IntegerField(default=-1)
-
-class Recipe(models.Model):
-    id = models.AutoField(primary_key=True)
-    recipe_name = models.CharField(max_length=30)
-    source_link = models.CharField()
-    ingredients = models.ManyToManyField(Ingredient)
-
-class Meal(models.Model):
-    id = models.AutoField(primary_key=True)
-    meal_name = models.CharField(max_length=30)
-    source_link = models.CharField()
-    recipes = models.ManyToManyField(Recipe)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-
-class Mealplan(models.Model):
-    id = models.AutoField(primary_key=True)
-    source_link = models.CharField()
-    meals = models.ManyToManyField(Meal)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-
 class Equipment(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
@@ -58,5 +31,5 @@ class WorkoutRoutine(models.Model):
 class Resource(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
-    link = models.CharField()
-    category = models.CharField()
+    link = models.CharField(max_length=10000)
+    category = models.CharField(max_length=10000)
