@@ -58,12 +58,6 @@ ROOT_URLCONF = 'nutrimotion_project.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.jinja2.Jinja2',
-        'DIRS': [str(BASE_DIR) + '/templates/',],
-        'APP_DIRS': True,
-        'OPTIONS': {'environment': 'nutrimotion_project.jinja2.Environment',}, 
-    },
-    {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [str(BASE_DIR) + '/templates/',],
         'APP_DIRS': True,
